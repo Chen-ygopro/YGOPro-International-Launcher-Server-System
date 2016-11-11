@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{6C8BC22D-8B78-4802-8C20-230C03243B64}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>YGOCore</RootNamespace>
+    <AssemblyName>GameServer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE;__MonoCS__</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>PdbOnly</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE;__MonoCS__</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>..\lib\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\lib\Password.cs">
+      <Link>Helper\Password.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\SQLiteTool.cs">
+      <Link>Helper\SQLiteTool.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Tool.cs">
+      <Link>Helper\Tool.cs</Link>
+    </Compile>
+    <Compile Include="..\RoomServer\Common\RoomMessage.cs">
+      <Link>Game\RoomMessage.cs</Link>
+    </Compile>
+    <Compile Include="ChatCommand.cs" />
+    <Compile Include="Game\BanlistManager.cs" />
+    <Compile Include="Game\CoreMessage.cs" />
+    <Compile Include="Game\GameAnalyser.cs" />
+    <Compile Include="Game\GameConfig.cs" />
+    <Compile Include="Game\GameConfigBuilder.cs" />
+    <Compile Include="Game\GameEvent.cs" />
+    <Compile Include="Game\GameRoom.cs" />
+    <Compile Include="Game\GameTimer.cs" />
+    <Compile Include="Game\YgopotStruct.cs" />
+    <Compile Include="Info\Banlist.cs" />
+    <Compile Include="Info\ClientCard.cs" />
+    <Compile Include="Info\Deck.cs" />
+    <Compile Include="Info\Replay.cs" />
+    <Compile Include="Info\ReplayHeader.cs" />
+    <Compile Include="Game\RoomManager.cs" />
+    <Compile Include="Info\WinInfo.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="Net\GameClientPacket.cs" />
+    <Compile Include="Net\GameServer.cs" />
+    <Compile Include="Net\GameServerPacket.cs" />
+    <Compile Include="Net\GameSession.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerApi.cs" />
+    <Compile Include="ServerConfig.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="..\lib\ocgcore.dll">
+      <Link>ocgcore.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\lib\sqlite3.dll">
+      <Link>sqlite3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="config.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lib\AsyncServer\AsyncServer.csproj">
+      <Project>{BE77806E-951A-4F6E-9F51-4E7F57A8FE6F}</Project>
+      <Name>AsyncServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\OCGWrapper\OCGWrapper.csproj">
+      <Project>{79E6FF24-453A-402C-B2CE-B7110B266121}</Project>
+      <Name>OCGWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\SevenZip\SevenZip.csproj">
+      <Project>{2DD4BA6F-7849-48C3-9CC5-55D64DF9CAFA}</Project>
+      <Name>SevenZip</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

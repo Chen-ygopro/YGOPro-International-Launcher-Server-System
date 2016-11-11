@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{E7112A43-C35C-433E-9776-5AF5F38DC35A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>YGOClient</RootNamespace>
+    <AssemblyName>YGOClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <StartupObject>YGOClient.MyNotifyIcon</StartupObject>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Hasee\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GameServer\Net\GameClientPacket.cs">
+      <Link>Common\GameClientPacket.cs</Link>
+    </Compile>
+    <Compile Include="..\GameServer\Net\GameServerPacket.cs">
+      <Link>Common\GameServerPacket.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\AsyncServer\BinaryExtensions.cs">
+      <Link>Common\BinaryExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\AsyncServer\PacketReader.cs">
+      <Link>Common\PacketReader.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\AsyncServer\PacketWriter.cs">
+      <Link>Common\PacketWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\ConfigManager.cs">
+      <Link>Common\ConfigManager.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\CtosMessage.cs">
+      <Link>Common\CtosMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\GameMessage.cs">
+      <Link>Common\GameMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\StocMessage.cs">
+      <Link>Common\StocMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\RoomInfo.cs">
+      <Link>Common\RoomInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Tool.cs">
+      <Link>Common\Tool.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\XmlTools.cs">
+      <Link>Common\XmlTools.cs</Link>
+    </Compile>
+    <Compile Include="CreateRoomForm.cs" />
+    <Compile Include="CreateRoomForm.Designer.cs">
+      <DependentUpon>CreateRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Info\AsyncClient.cs" />
+    <Compile Include="Info\Client.cs" />
+    <Compile Include="Info\Protocol.cs" />
+    <Compile Include="Info\RoomTool.cs" />
+    <Compile Include="Info\Server.cs" />
+    <Compile Include="Info\User.cs" />
+    <Compile Include="InputDialog.cs" />
+    <Compile Include="InputDialog.Designer.cs">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyNotifyIcon.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomForm.cs" />
+    <Compile Include="RoomForm.Designer.cs">
+      <DependentUpon>RoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomGrid.cs" />
+    <Compile Include="UserForm.cs" />
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CreateRoomForm.resx">
+      <DependentUpon>CreateRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputDialog.resx">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyNotifyIcon.resx">
+      <DependentUpon>MyNotifyIcon.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Program.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomForm.resx">
+      <DependentUpon>RoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common" />
+    <Folder Include="Info" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

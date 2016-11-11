@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{96C45ACA-7729-4147-AD99-B829EFAD23B1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YGOServer</RootNamespace>
+    <AssemblyName>YGOServer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <StartupObject>YGOCore.Program</StartupObject>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;__MonoCS__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>..\release\</OutputPath>
+    <DefineConstants>TRACE;__MonoCS__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <StartAction>Project</StartAction>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <StartAction>Project</StartAction>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>..\lib\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Mono.Data.Sqlite" Condition=" '$(OS)' == 'Unix' " />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\lib\Ocgcore\Api.cs">
+      <Link>Ocgcore\Api.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Card.cs">
+      <Link>Ocgcore\Card.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Duel.cs">
+      <Link>Ocgcore\Duel.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Enums\CardAttribute.cs">
+      <Link>Ocgcore\Enums\CardAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Enums\CardLocation.cs">
+      <Link>Ocgcore\Enums\CardLocation.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Enums\CardPosition.cs">
+      <Link>Ocgcore\Enums\CardPosition.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Enums\CardRace.cs">
+      <Link>Ocgcore\Enums\CardRace.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Enums\CardType.cs">
+      <Link>Ocgcore\Enums\CardType.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Enums\Query.cs">
+      <Link>Ocgcore\Enums\Query.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Helpers\MtRandom.cs">
+      <Link>Ocgcore\MtRandom.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Managers\CardsManager.cs">
+      <Link>Ocgcore\CardsManager.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Managers\PathManager.cs">
+      <Link>Ocgcore\PathManager.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Network\CtosMessage.cs">
+      <Link>Ocgcore\Network\CtosMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Network\DuelPhase.cs">
+      <Link>Ocgcore\Network\DuelPhase.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Network\Error.cs">
+      <Link>Ocgcore\Network\Error.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Network\GameMessage.cs">
+      <Link>Ocgcore\Network\GameMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Network\GameState.cs">
+      <Link>Ocgcore\Network\GameState.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Network\PlayerChange.cs">
+      <Link>Ocgcore\Network\PlayerChange.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Network\PlayerState.cs">
+      <Link>Ocgcore\Network\PlayerState.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Network\PlayerType.cs">
+      <Link>Ocgcore\Network\PlayerType.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\Network\StocMessage.cs">
+      <Link>Ocgcore\Network\StocMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\SQLiteTool.cs">
+      <Link>Ocgcore\SQLiteTool.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\Ocgcore\WinInfo.cs">
+      <Link>Ocgcore\WinInfo.cs</Link>
+    </Compile>
+    <Compile Include="GameManager.cs" />
+    <Compile Include="Game\Banlist.cs" />
+    <Compile Include="Game\BanlistManager.cs" />
+    <Compile Include="Game\BinaryExtensions.cs" />
+    <Compile Include="Game\ClientCard.cs" />
+    <Compile Include="Game\GameClient.cs" />
+    <Compile Include="Game\GameConfig.cs" />
+    <Compile Include="Game\CoreMessage.cs" />
+    <Compile Include="Game\Deck.cs" />
+    <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\GameAnalyser.cs" />
+    <Compile Include="Game\GameClientPacket.cs" />
+    <Compile Include="Game\GameRoom.cs" />
+    <Compile Include="Game\GameServerPacket.cs" />
+    <Compile Include="Game\Player.cs" />
+    <Compile Include="Game\Replay.cs" />
+    <Compile Include="Game\ReplayHeader.cs" />
+    <Compile Include="Game\RoomInfo.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="Plugin\ChatCommand.cs" />
+    <Compile Include="Plugin\HttpServer.cs" />
+    <Compile Include="Plugin\MyHttpServer.cs" />
+    <Compile Include="Plugin\MsgSystem.cs" />
+    <Compile Include="Plugin\Tool.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="ServerConfig.cs" />
+    <Compile Include="SevenZip\Common\CommandLineParser.cs" />
+    <Compile Include="SevenZip\Common\CRC.cs" />
+    <Compile Include="SevenZip\Common\InBuffer.cs" />
+    <Compile Include="SevenZip\Common\OutBuffer.cs" />
+    <Compile Include="SevenZip\Compress\LZMA\LzmaBase.cs" />
+    <Compile Include="SevenZip\Compress\LZMA\LzmaDecoder.cs" />
+    <Compile Include="SevenZip\Compress\LZMA\LzmaEncoder.cs" />
+    <Compile Include="SevenZip\Compress\LZ\IMatchFinder.cs" />
+    <Compile Include="SevenZip\Compress\LZ\LzBinTree.cs" />
+    <Compile Include="SevenZip\Compress\LZ\LzInWindow.cs" />
+    <Compile Include="SevenZip\Compress\LZ\LzOutWindow.cs" />
+    <Compile Include="SevenZip\Compress\RangeCoder\RangeCoder.cs" />
+    <Compile Include="SevenZip\Compress\RangeCoder\RangeCoderBit.cs" />
+    <Compile Include="SevenZip\Compress\RangeCoder\RangeCoderBitTree.cs" />
+    <Compile Include="SevenZip\ICoder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ocgcore\Enums" />
+    <Folder Include="Ocgcore\Network" />
+    <Folder Include="Plugin" />
+    <Folder Include="Ocgcore" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\lib\ocgcore.dll">
+      <Link>ocgcore.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\lib\sqlite3.dll">
+      <Link>sqlite3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="config.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

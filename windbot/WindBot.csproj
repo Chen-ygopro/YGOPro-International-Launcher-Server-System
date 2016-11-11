@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E7FAF67-A27D-4A61-B161-93AD4414183E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindBot</RootNamespace>
+    <AssemblyName>AI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <StartupObject>WindBot.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\GameServer\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;__MonoCS__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>..\GameServer\bin\Release\</OutputPath>
+    <DefineConstants>TRACE;__MonoCS__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <StartAction>Project</StartAction>
+    <StartArguments>[AI]test$kenan123 127.0.0.1 8911 hello AI_Horus</StartArguments>
+    <StartWorkingDirectory>..\release\</StartWorkingDirectory>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <StartAction>Project</StartAction>
+    <StartArguments>[AI]$kenan123 127.0.0.1 8911 T#hello AI_Horus</StartArguments>
+    <StartWorkingDirectory>..\release\</StartWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>..\lib\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\lib\OCGWrapper\Card.cs">
+      <Link>Common\Card.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Enums\CardAttribute.cs">
+      <Link>Common\CardAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Enums\CardLocation.cs">
+      <Link>Common\CardLocation.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Enums\CardPosition.cs">
+      <Link>Common\CardPosition.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Enums\CardRace.cs">
+      <Link>Common\CardRace.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Enums\CardType.cs">
+      <Link>Common\CardType.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Enums\Query.cs">
+      <Link>Common\Query.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Managers\CardsManager.cs">
+      <Link>Common\CardsManager.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\CtosMessage.cs">
+      <Link>Common\CtosMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\DuelPhase.cs">
+      <Link>Common\DuelPhase.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\Error.cs">
+      <Link>Common\Error.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\GameMessage.cs">
+      <Link>Common\GameMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\GameState.cs">
+      <Link>Common\GameState.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\PlayerChange.cs">
+      <Link>Common\PlayerChange.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\PlayerState.cs">
+      <Link>Common\PlayerState.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\PlayerType.cs">
+      <Link>Common\PlayerType.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\OCGWrapper\Network\StocMessage.cs">
+      <Link>Common\StocMessage.cs</Link>
+    </Compile>
+    <Compile Include="AI\AIFunctions.cs" />
+    <Compile Include="AI\CardContainer.cs" />
+    <Compile Include="AI\CardExecutor.cs" />
+    <Compile Include="AI\CardExtension.cs" />
+    <Compile Include="AI\CardSelector.cs" />
+    <Compile Include="AI\DeckAttribute.cs" />
+    <Compile Include="AI\DecksManager.cs" />
+    <Compile Include="AI\Decks\HorusExecutor.cs" />
+    <Compile Include="AI\Decks\OldSchoolExecutor.cs" />
+    <Compile Include="AI\DefaultExecutor.cs" />
+    <Compile Include="AI\Dialogs.cs" />
+    <Compile Include="AI\Enums\DangerousMonster.cs" />
+    <Compile Include="AI\Enums\InvincibleMonster.cs" />
+    <Compile Include="AI\Enums\NegateAttackSpell.cs" />
+    <Compile Include="AI\Enums\NegatesEffects.cs" />
+    <Compile Include="AI\Enums\NegatesSpells.cs" />
+    <Compile Include="AI\Enums\NegatesSummons.cs" />
+    <Compile Include="AI\Enums\NegatesTraps.cs" />
+    <Compile Include="AI\Executor.cs" />
+    <Compile Include="AI\ExecutorType.cs" />
+    <Compile Include="Game\BattlePhase.cs" />
+    <Compile Include="Game\BattlePhaseAction.cs" />
+    <Compile Include="Game\ClientCard.cs" />
+    <Compile Include="Game\ClientField.cs" />
+    <Compile Include="Game\Deck.cs" />
+    <Compile Include="Game\Duel.cs" />
+    <Compile Include="Game\GameAI.cs" />
+    <Compile Include="Game\GameBehavior.cs" />
+    <Compile Include="Game\AIGameClient.cs" />
+    <Compile Include="Game\MainPhase.cs" />
+    <Compile Include="Game\MainPhaseAction.cs" />
+    <Compile Include="Network\BinaryExtensions.cs" />
+    <Compile Include="Network\GameClientPacket.cs" />
+    <Compile Include="Network\AIGameConnection.cs" />
+    <Compile Include="Network\GameServerPacket.cs" />
+    <Compile Include="Game\Room.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Decks" />
+    <Folder Include="Common" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\lib\sqlite3.dll">
+      <Link>sqlite3.dll</Link>
+    </None>
+    <None Include="Decks\OldSchool.ydk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Decks\Horus.ydk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
