@@ -63,13 +63,13 @@ namespace OcgWrapper
 			return cols;
 		}
 		
-		#region 执行sql语句
+		#region Executing SQL statements
 		/// <summary>
-		/// 执行sql语句
+		/// Executing SQL statements
 		/// </summary>
-		/// <param name="DB">数据库</param>
-		/// <param name="SQLs">sql语句</param>
-		/// <returns>返回影响行数</returns>
+		/// <param name="DB">Database</param>
+		/// <param name="SQLs">SQL statement</param>
+		/// <returns>Returns the number of rows affected</returns>
 		public static int Command(string DB, params string[] SQLs)
 		{
 			int result = 0;
@@ -94,7 +94,7 @@ namespace OcgWrapper
 						catch(Exception ex)
 						{
 							Console.WriteLine(ex.ToString());
-							trans.Rollback();//出错，回滚
+							trans.Rollback();//There was an error, roll back
 							result = -1;
 						}
 						finally

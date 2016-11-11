@@ -15,7 +15,7 @@ namespace YGOCore.Net
         public GameSession(Connection<GameSession> client, int version, int timeout)
         {
             this.m_client = client;
-            //异步发送
+            //Asynchronous send
             this.Type = (int)PlayerType.Undefined;
             this.State = PlayerState.None;
             this.ClientVersion = version;
@@ -34,7 +34,7 @@ namespace YGOCore.Net
                 }
                 if (CheckTimer.CheckStop())
                 {
-                    //超时自动断开
+                    //Timeout is automatically disconnected
                     CloseAsync();
                     CheckTimer.Close();
                 }
@@ -46,11 +46,11 @@ namespace YGOCore.Net
         private Connection<GameSession> m_client;
         private string namepassword;
         /// <summary>
-        /// 房间
+        /// Room
         /// </summary>
         public GameRoom Game;
         /// <summary>
-        /// 名字
+        /// First name
         /// </summary>
         public string Name
         {
@@ -67,29 +67,29 @@ namespace YGOCore.Net
             }
         }
         /// <summary>
-        /// 是否认证
+        /// Certification
         /// </summary>
         public bool IsAuthentified { get; set; }
         /// <summary>
-        /// 类型
+        /// Type
         /// </summary>
         public int Type { get; set; }
 
         /// <summary>
-        /// 跳过的回合数
+        /// Skip a number of rounds
         /// </summary>
         public int TurnSkip { get; set; }
         /// <summary>
-        /// 卡组
+        /// Card group
         /// </summary>
         public Deck Deck { get; set; }
         /// <summary>
-        /// 状态
+        /// Fitness
         /// </summary>
         public PlayerState State { get; set; }
 
         /// <summary>
-        /// 是否连接
+        /// Is connected
         /// </summary>
         public bool IsConnected
         {
@@ -125,7 +125,7 @@ namespace YGOCore.Net
         public void OnReceive(object obj)
         {
             if (m_close) return;
-            //线程处理
+            //Threading
             bool next = true;
             while (next)
             {
@@ -133,7 +133,7 @@ namespace YGOCore.Net
                 next = m_client.GetPacketData(GameServerPacket.GamePacketByteLength, out data);
                 if (data!=null&& data.Length>0)
                 {
-                    //处理游戏事件
+                    //Handle game events
                     GameClientPacket packet = new GameClientPacket(data);
                     GameEvent.Handler(this, packet);
                 }

@@ -61,21 +61,21 @@ namespace System.Windows.Forms
 				this.Controls.Add(lb_statu);
 				
 				Label label2 = new Label();
-				label2.Text = "禁限卡表："+config.BanList;
+				label2.Text = "Banlist："+config.BanList;
 				label2.TextAlign = ContentAlignment.MiddleLeft;
 				label2.Padding = new Padding(8, 2, 2, 2);
 				label2.Size = new Size(182, 26);
 				this.Controls.Add(label2);
 				
 				Label label3 = new Label();
-				label3.Text = "允许卡片："+(config.Rule==0?"OCG":(config.Rule==1?"TCG":"OCG,TCG"));
+				label3.Text = "Allow card："+(config.Rule==0?"OCG":(config.Rule==1?"TCG":"OCG,TCG"));
 				label3.TextAlign = ContentAlignment.MiddleLeft;
 				label3.Padding = new Padding(8, 2, 2, 2);
 				label3.Size = new Size(182, 26);
 				this.Controls.Add(label3);
 				
 				Label label4 = new Label();
-				label4.Text = "决斗模式："+(config.Mode==2?"双打模式":(config.Mode==1?"比赛模式":"单局模式"));
+				label4.Text = "Match："+(config.Mode==2?"Tag":(config.Mode==1?"Tournament mode":"Single duel"));
 				label4.TextAlign = ContentAlignment.MiddleLeft;
 				label4.Padding = new Padding(8, 2, 2, 2);
 				label4.Size = new Size(182, 26);
@@ -85,11 +85,11 @@ namespace System.Windows.Forms
 				join.FlatStyle = FlatStyle.Popup;
 				join.Size=new Size(180, 32);
 				if(config.HasPassword()){
-					join.Text="输入密码";
+					join.Text="Enter the password";
 					join.ForeColor =Color.DarkRed;
 					join.BackColor = Color.Gray;
 				}else{
-					join.Text="加入房间";
+					join.Text="Join room";
 				}
 				join.Click += delegate {
                     if (parent != null)
@@ -109,10 +109,10 @@ namespace System.Windows.Forms
 		public void StartGame(bool start){
 			if(lb_statu!=null){
 				if(start){
-					lb_statu.Text="【决斗中】";
+					lb_statu.Text="【Duel】";
                 }
                 else{
-					lb_statu.Text="【等待中】";
+					lb_statu.Text="【In waiting】";
 				}
 			}
 		}
@@ -206,7 +206,7 @@ namespace System.Windows.Forms
 		private void UpdateAll(List<GameConfig2> configs){
 			this.SuspendLayout();
 			this.Controls.Clear();
-			//MessageBox.Show("共有"+rooms.Length+"房间");
+			//MessageBox.Show("A total of"+rooms.Length+"Room");
 			foreach(GameConfig2 config in configs){
 				AddRoom(config);
 			}

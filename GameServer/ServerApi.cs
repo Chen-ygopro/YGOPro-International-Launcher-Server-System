@@ -88,7 +88,7 @@ namespace YGOCore
 		}
 		private static void Recevice(AsyncClient client)
         {
-            //线程处理
+            //Threading
             bool next = true;
             while (next)
             {
@@ -96,7 +96,7 @@ namespace YGOCore
                 next = client.GetPacketData(2, out data);
                 if (data != null && data.Length > 0)
                 {
-                    //处理游戏事件
+                    //Handle game events
                     PacketReader packet = new PacketReader(data);
                     Handler(packet);
                 }

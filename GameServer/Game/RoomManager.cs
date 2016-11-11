@@ -66,7 +66,7 @@ namespace YGOCore.Game
         }
         public static bool OnLogin(string name, string pwd)
         {
-            //长密码，短密码
+            //A long password, short
             if (string.IsNullOrEmpty(name))
             {
                 return false;
@@ -80,7 +80,7 @@ namespace YGOCore.Game
             {
                 return true;
             }
-            //服务器接口
+            //Server interface
             return ServerApi.CheckLogin(name, pwd);
         }
         public static void init(string file)
@@ -90,10 +90,10 @@ namespace YGOCore.Game
         }
         #endregion
 
-        #region 比赛记录
+        #region Game records
         private static void SatrtWinTimer()
         {
-            //10s保存一次结果
+            //10s saved results
             if (WinSaveTimer == null)
             {
                 WinSaveTimer = new System.Timers.Timer(10 * 1000);
@@ -128,12 +128,12 @@ namespace YGOCore.Game
         }
         #endregion
 
-        #region 禁止登录
+        #region Disable logons
         /// <summary>
         /// 
         /// </summary>
         /// <param name="name"></param>
-        /// <returns>false=被禁止</returns>
+        /// <returns>false=Prohibited</returns>
         public static bool CheckPlayerBan(string name)
         {
             if (string.IsNullOrEmpty(name))
@@ -175,7 +175,7 @@ namespace YGOCore.Game
         }
         #endregion
 
-        #region 房间
+        #region Room
         public static void Remove(GameRoom room)
         {
             if (room == null) return;
@@ -195,7 +195,7 @@ namespace YGOCore.Game
             {
                 if (Games.ContainsKey(name))
                 {
-                    //存在这个房间
+                    //This room
                     GameRoom room = Games[name];
                     if (room != null && room.Config != null)
                     {
@@ -206,7 +206,7 @@ namespace YGOCore.Game
             return true;
         }
         /// <summary>
-        /// 创建房间
+        /// Create a room
         /// </summary>
         /// <param name="server"></param>
         /// <param name="config"></param>
@@ -232,7 +232,7 @@ namespace YGOCore.Game
             }
         }
         /// <summary>
-        /// 得到一个不存在的随机房间名
+        /// Get a random room does not exist
         /// </summary>
         /// <param name="server"></param>
         /// <returns></returns>
@@ -260,7 +260,7 @@ namespace YGOCore.Game
         }
 
         /// <summary>
-        /// 得到一个存在的随机房间名，不能带密码
+        /// Get a random room name, no password
         /// </summary>
         /// <param name="server"></param>
         /// <param name="tag"></param>
@@ -301,7 +301,7 @@ namespace YGOCore.Game
             {
                 if (room != null && room.Config.Name != null && !room.Config.Name.Contains("$"))
                 {
-                    //不为空，没有密码
+                    //Is not empty, no password
                     if (!string.IsNullOrEmpty(tag) && !room.Name.StartsWith(tag))
                     {
                         continue;

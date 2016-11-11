@@ -28,7 +28,7 @@ namespace YGOCore
 		public int Port{get; private set;}
 		public bool NeedAuth{get;private set;}
 		/// <summary>
-		/// 人数
+		/// The number of
 		/// </summary>
 		public int Count{
 			get{lock(AsyncLock)return m_count;}
@@ -73,9 +73,9 @@ namespace YGOCore
         public void OnRecevice(){
 			//api
 			if(m_close) return;
-			//线程处理
+			//Threading
 			List<PacketReader> packets=new List<PacketReader>();
-            //线程处理
+            //Threading
             bool next = true;
             while (next)
             {
@@ -83,12 +83,12 @@ namespace YGOCore
                 next = Client.GetPacketData(2, out data);
                 if (data != null && data.Length > 0)
                 {
-                    //处理游戏事件
+                    //Handle game events
                     PacketReader packet = new PacketReader(data);
                     packets.Add(packet);
                 }
             }
-			//处理游戏事件
+			//Handle game events
 			ServerEvent.Handler(this, packets);
 		}
 	}

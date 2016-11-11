@@ -5,7 +5,7 @@ namespace AsyncServer
 {
     public class StructTransformer
     {
-        //struct转换为byte[]
+        //structConvertbyte[]
         public static byte[] StructToBytes(object structObj)
         {
             int size = Marshal.SizeOf(structObj);
@@ -23,7 +23,7 @@ namespace AsyncServer
             }
         }
 
-        //byte[]转换为struct
+        //byte[] Convertsstruct
         public static object BytesToStruct(byte[] bytes, Type strcutType)
         {
             int size = Marshal.SizeOf(strcutType);

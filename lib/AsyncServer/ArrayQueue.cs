@@ -43,7 +43,7 @@ namespace AsyncServer
 			Dequeue(data, 0, data.Length);
 		}
 		/// <summary>
-		/// 从0开始移除
+		/// Starting from 0 to remove
 		/// </summary>
 		/// <param name="data"></param>
 		/// <param name="start"></param>

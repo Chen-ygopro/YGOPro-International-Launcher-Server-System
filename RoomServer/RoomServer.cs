@@ -17,7 +17,7 @@ using System.Xml;
 namespace YGOCore
 {
     /// <summary>
-    /// 房间服务端
+    /// Room service-side
     /// </summary>
     public class RoomServer
     {
@@ -33,7 +33,7 @@ namespace YGOCore
         private System.Timers.Timer infoTimer = new System.Timers.Timer(60 * 1000);
         private int m_timers = 0;
         /// <summary>
-        /// 公告
+        /// Bulletin
         /// </summary>
         public string Tip = "";
         public RoomServer()
@@ -244,7 +244,7 @@ namespace YGOCore
             }
             Logger.Debug("Listener_OnConnect");
             Session session = new Session(Client, this);
-            //分配对战端
+            //Assign the game port
         }
         #endregion
 
@@ -266,7 +266,7 @@ namespace YGOCore
             return ports;
         }
         /// <summary>
-        /// 返回最少人数的服务端
+        /// Returns the minimum number of server
         /// </summary>
         public DuelServer GetMinServer()
         {

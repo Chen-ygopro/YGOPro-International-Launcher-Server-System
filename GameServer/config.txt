@@ -1,25 +1,25 @@
-﻿#### 客户端版本1033.7
+﻿Client version 1033.8
 clientversion = 1337
 serverport = 8910
-##roomserver
+Roomserver
 apiport = 0
-#### 资源路径
+Resource Path
 path = 1337
-#### 登录认证
-needauth=false
-############## 如果卡的话，试试asyncmode为true
-asyncmode=true
-### 最大房间数
-maxroom=500
-### AI最大数
-maxai=100
-### AI任何时候都需要密码
-aipassword=kn123
-###################帐号管理
-##### 0 不禁止；1 禁止列表帐号；2 只允许列表帐号
-bannamemode=0
-loglevel=2
-#超时
-timeout=15
-#禁止ip模式
-isbanip=false
+Login authentication
+needauth = true
+If the card, try asyncmode is true
+asyncmode = false
+The maximum number of rooms ###
+maxroom = 500
+The maximum number of ### AI
+maxai = 100
+AI ever need a password
+aipassword = kn123
+Account Management
+0 does not prohibit; a prohibition list account; two accounts allow list
+bannamemode = 0
+loglevel = 2
+#time out
+timeout = 15
+# Ip ban mode
+isbanip = false

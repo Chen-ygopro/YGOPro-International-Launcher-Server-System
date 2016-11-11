@@ -54,7 +54,7 @@ namespace GameClient
 		
         private static void OnServerStop(Client client, PacketReader reader)
         {
-            MessageBox.Show("服务器关闭");
+            MessageBox.Show("Server Shutdown");
             try
             {
                 client.Close(true);
@@ -64,7 +64,7 @@ namespace GameClient
         }
         #region msg
         private static void OnError(Client client, PacketReader reader){
-			//错误
+			//Errors
 			string err = reader.ReadUnicode(256);
          //   int code = reader.ReadByte();
 			MessageBox.Show(err);
@@ -75,7 +75,7 @@ namespace GameClient
 			//}
 		}
 		private static void OnServerInfo(Client client, PacketReader reader){
-			//服务器信息
+			//Server information
 			Program.Config.ChatPort = reader.ReadInt32();
 			Program.Config.DuelPort = reader.ReadInt32();
 			Program.Config.NeedAuth = reader.ReadBoolean();
@@ -86,7 +86,7 @@ namespace GameClient
             client.OnLoginOk();
 		}
 		private static void OnClientChat(Client client, PacketReader reader){
-			//大厅聊天
+			//Lobby chat
 			string name = reader.ReadUnicode(20);
 			string toname = reader.ReadUnicode(20);
 			string msg = reader.ReadUnicode(256);
@@ -96,7 +96,7 @@ namespace GameClient
 		
 		#region room
 		private static void OnRoomCreate(Client client, PacketReader reader){
-			//房间创建
+			//Rooms creating
 			int port = reader.ReadInt32();
 			bool needauth = reader.ReadBoolean();
 			string room = reader.ReadUnicode(20);

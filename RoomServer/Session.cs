@@ -15,7 +15,7 @@ using YGOCore;
 namespace YGOCore
 {
     /// <summary>
-    /// 客户端
+    /// Client
     /// </summary>
     public class Session
     {
@@ -24,28 +24,28 @@ namespace YGOCore
         #region member
         public RoomServer Server { get; private set; }
         protected Connection<Session> Client { get; private set; }
-        //ygopro登录
+        //ygoproLogin
         public bool IsClient;
-        //客户端发送一次消息，才能接收其他用户的消息
+        //A message sent by a client to receive other users ' messages
         public bool CanGameChat;
 
         public bool IsLogin;
 
         private bool m_close = false;
         /// <summary>
-        /// 暂停推送
+        /// Push the pause
         /// </summary>
         public bool IsPause = false;
         /// <summary>
-        /// 名字
+        /// First name
         /// </summary>
         public string Name;
         /// <summary>
-        /// 所在房间名
+        /// Room name
         /// </summary>
         public string RoomName;
         /// <summary>
-        /// 当前所在的服务器
+        /// Current server
         /// </summary>
         public DuelServer ServerInfo;
 
@@ -151,7 +151,7 @@ namespace YGOCore
         public void OnRecevice()
         {
             if (m_close) return;
-            //线程处理
+            //Threading
             bool next = true;
             while (next)
             {
@@ -159,7 +159,7 @@ namespace YGOCore
                 next = Client.GetPacketData(2, out data);
                 if (data != null && data.Length > 0)
                 {
-                    //处理游戏事件
+                    //Handle game events
                     PacketReader packet = new PacketReader(data);
                     ClinetEvent.Handler(this, packet);
                 }

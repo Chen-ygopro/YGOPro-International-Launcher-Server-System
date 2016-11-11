@@ -11,7 +11,7 @@ namespace System.IO
 		protected MemoryStream m_stream;
 		protected int m_PacketByteLength = 4;
 		/// <summary>
-		/// 包含包长度
+		/// Contains the packet length
 		/// </summary>
 		public byte[] Content{
 			get{
@@ -32,7 +32,7 @@ namespace System.IO
 			Seek(pos, SeekOrigin.Begin);
 		}
 		/// <summary>
-		/// 添加包长度
+		/// Add packet length
 		/// </summary>
 		private byte[] GetContent(){
 			byte[] content = null;

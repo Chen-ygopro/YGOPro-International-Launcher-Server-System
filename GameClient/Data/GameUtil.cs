@@ -36,14 +36,14 @@ namespace GameClient
 					info.Invoke(null, null);
 				int t2 = Environment.TickCount;
 				if(t2-t<3000){
-					MessageBox.Show("添加AI失败！\n1.打开游戏创建房间\n2.房间请勾选不检查卡组");
+					MessageBox.Show("ai failled to start.");
 				}
 			}catch(Exception
 			       #if DEBUG
 			       e
 			       #endif
 			      ){
-				MessageBox.Show("添加AI失败！\n"
+				MessageBox.Show("Adding ai failed"
 				                #if DEBUG
 				                +e.ToString()
 				                #endif
@@ -155,7 +155,7 @@ namespace GameClient
 		}
 		#region
 		/// <summary>
-		/// 合并路径
+		/// Merge paths
 		/// </summary>
 		/// <param name="paths"></param>
 		/// <returns></returns>

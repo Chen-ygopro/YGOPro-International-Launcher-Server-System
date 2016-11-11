@@ -59,7 +59,7 @@ namespace YGOCore
                 }
                 if (srv != null)
                 {
-                    //特殊处理
+                    //Special handling
                     writer.Write(srv.Port);
                     writer.Write(srv.NeedAuth);
                     //session.ServerInfo = srv;
@@ -168,7 +168,7 @@ namespace YGOCore
                         }
                     }
                 }
-                //重写长度
+                //Override the length
                 wrtier.SetPosition(1);
                 wrtier.Write(count);
                 session.Send(wrtier.Content);
@@ -233,7 +233,7 @@ namespace YGOCore
                             {
                                 if (sender != null)
                                 {
-                                    sender.SendError("[err]" + toname + " 不在线。");
+                                    sender.SendError("[err]" + toname + " Not online。");
                                 }
 #if DEBUG
 								Console.WriteLine("no find "+toname);

@@ -10,13 +10,13 @@
 		<!-- access these values via the property:
 			System.Configuration.ConfigurationManager.AppSettings[key]
 		-->
-		<!-- 3的 倍数-->
+		<!-- Multiples of 3-->
 		<add key="timeout" value="10"/>
 		<add key="port" value="18910"/>
 		<add key="apiport" value="10001"/>
 		<add key="gameserver" value="GameServer.exe"/>
     <add key="no_random_room" value="true"/>
-		<!-- 数组,隔开-->
+		<!-- Array, separated by-->
 		<add key="config" value="config.txt"/>
 		<add key="ports" value="8810,8811,8812,8813,8814"/>
 	</appSettings>

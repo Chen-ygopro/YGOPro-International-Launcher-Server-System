@@ -42,7 +42,7 @@ namespace GameClient
         }
         void MainFormLoad(object sender, EventArgs e)
         {
-            this.Text = "游戏大厅 " + Client.Name + ":" + Program.Config.DuelPort;
+            this.Text = "Ygopro International " + Client.Name + ":" + Program.Config.DuelPort;
             Client.OnServerChat += new OnServerChatHandler(OnServerChat);
             Client.OnRoomClose += new OnRoomCloseHandler(panel_rooms.OnClose);
             Client.OnRoomStart += new OnRoomStartHandler(panel_rooms.OnStart);
@@ -85,7 +85,7 @@ namespace GameClient
         void Client_OnServerClose(int port)
         {
             panel_rooms.Clear(port);
-            OnServerChat(null, null, "服务端(" + port + ")发生异常。");
+            OnServerChat(null, null, "Server(" + port + ")An exception Occurred。");
         }
 
         void m_login_Client_OnGameExited()
@@ -113,7 +113,7 @@ namespace GameClient
             }
             catch (Exception)
             {
-                MessageBox.Show("发送失败");
+                MessageBox.Show("Failed to send");
             }
         }
         public void OnServerChat(string pname, string tname, string msg)
@@ -135,11 +135,11 @@ namespace GameClient
                 // 	rb_allmsg.Font = new Font(oldf, FontStyle.Bold);
                 if (string.IsNullOrEmpty(pname))
                 {
-                    rb_allmsg.AppendText("系统消息:");
+                    rb_allmsg.AppendText("Server Message:");
                 }
                 else if (!string.IsNullOrEmpty(tname))
                 {
-                    rb_allmsg.AppendText("[私聊]" + pname + ":");
+                    rb_allmsg.AppendText("[Whisper]" + pname + ":");
                 }
                 else {
                     rb_allmsg.AppendText(pname + ": ");
@@ -162,12 +162,12 @@ namespace GameClient
             string msg = rb_msg.Text;
             if (string.IsNullOrEmpty(msg))
             {
-                MessageBox.Show("消息不能为空");
+                MessageBox.Show("Message can not be empty");
                 return;
             }
             if (msg.Length > 128)
             {
-                MessageBox.Show("消息内容过长");
+                MessageBox.Show("Message is too long");
                 return;
             }
             if (msg.StartsWith("@"))
@@ -193,7 +193,7 @@ namespace GameClient
                     {
                         if (((now_time.Ticks - pri_sendtime.Value.Ticks) / 10000 / 1000) < 60)
                         {
-                            MessageBox.Show("匿名消息的发送间隔是60秒，私聊不受影响");
+                            MessageBox.Show("Send anonymous message interval is 60 seconds, whisper unaffected");
                             return;
                         }
                         pri_sendtime = now_time;
@@ -209,7 +209,7 @@ namespace GameClient
                     {
                         if (((now_time.Ticks - sendtime.Value.Ticks) / 10000 / 1000) < 10)
                         {
-                            MessageBox.Show("消息发送间隔是10秒，私聊不受影响");
+                            MessageBox.Show("Message send interval is 10 seconds and whisper is not affected");
                             return;
                         }
                         sendtime = now_time;
@@ -355,7 +355,7 @@ namespace GameClient
         void Btn_joinClick(object sender, EventArgs e)
         {
             string room = null;
-            using (InputDialog input = new InputDialog("请输入房间代码", true))
+            using (InputDialog input = new InputDialog("Please enter the room password", true))
             {
                 if (input.ShowDialog() == DialogResult.OK)
                 {
@@ -468,7 +468,7 @@ namespace GameClient
                     }
                     else
                     {
-                        MessageBox.Show("没有找到玩家");
+                        MessageBox.Show("Player not found");
                     }
                 }
                 if (room != null)
@@ -477,7 +477,7 @@ namespace GameClient
                 }
                 else
                 {
-                    MessageBox.Show(name + "没有在房间");
+                    MessageBox.Show(name + "Not in game");
                 }
             }
         }
@@ -491,7 +491,7 @@ namespace GameClient
             if (roominfo.Contains("$"))
             {
                 string pass = Password.GetPwd(roominfo);
-                using (InputDialog input = new InputDialog("请输入密码", true))
+                using (InputDialog input = new InputDialog("Pleaser enter your password", true))
                 {
                     if (input.ShowDialog() == DialogResult.OK)
                     {
@@ -500,7 +500,7 @@ namespace GameClient
                             JoinRoom(roominfo, port, neeauth);
                         }
                         else {
-                            MessageBox.Show("密码不正确");
+                            MessageBox.Show("Incorrect password");
                         }
                     }
                 }

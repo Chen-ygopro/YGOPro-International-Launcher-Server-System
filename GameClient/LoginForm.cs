@@ -62,22 +62,22 @@ namespace GameClient
 			string username = tb_username.Text;
 			string pwd = tb_password.Text;
 			if(string.IsNullOrEmpty(username)){
-				MessageBox.Show("用户名不能为空");
+				MessageBox.Show("The user name cannot be empty");
 				return;
 			}
             if (string.IsNullOrEmpty(pwd))
             {
-                MessageBox.Show("密码不能为空");
+                MessageBox.Show("Password cannot be empty");
                 return;
             }
         //    pwd = Tool.GetMd5(pwd);
             if (username.Contains("$")||username.Contains("[")||username.Contains("]")){
-				MessageBox.Show("用户名不合法");
+				MessageBox.Show("User names are not legitimate");
 				return;
 			}
             ConfigManager.Save(USER_NAME, username);
             if (!Client.Connect(Program.Config)){
-				MessageBox.Show("无法连接服务器");
+				MessageBox.Show("Cannot connect to server");
 				return;
 			}
             Client.Login(username, pwd, false);// chb_force.Checked);
@@ -118,7 +118,7 @@ namespace GameClient
         {
             using(OpenFileDialog dlg=new OpenFileDialog())
             {
-                dlg.Title = "选择游戏主程序";
+                dlg.Title = "Select main program";
                 dlg.InitialDirectory = ".";
                 dlg.Filter = "游戏王|ygo*.exe|执行程序(*.exe)|*.exe";
                 if(dlg.ShowDialog() == DialogResult.OK)

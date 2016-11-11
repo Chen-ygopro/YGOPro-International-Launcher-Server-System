@@ -61,7 +61,7 @@ namespace YGOCore
 				process=new Process();
 			}
 			process.StartInfo.FileName = m_fileName;
-			//设定程式执行参数
+			//Set the execution of the program parameters
 			process.StartInfo.Arguments = " "+m_config + " "+m_port+" "+m_aptport+" true";
 			process.EnableRaisingEvents=true;
 			process.StartInfo.WindowStyle=ProcessWindowStyle.Hidden;
@@ -75,7 +75,7 @@ namespace YGOCore
 		private void Exited(object sender, EventArgs e){
 			if(isRunning){
 				Close();
-				//异常结束
+				//Abnormal end
 				Start();
 			}else{
 				Close();

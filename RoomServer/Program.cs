@@ -9,11 +9,11 @@ namespace YGOCore
 	class Program
 	{
 		/// <summary>
-		/// 负责房间列表和在线列表。
-		/// <para>客户端登录，验证后，返回聊天服务端(目前本端负责)和（人数最少的）对战服务端的地址，全部的房间列表由本端提供</para>
-		/// <para>请求房间列表，返回等待的房间
-		/// <para>当房间变化，推送</para></para>
-		/// <para>当客户端进入游戏，发送暂停消息，暂停推送，退出游戏，则请求房间列表</para>
+		/// Is responsible for the room and online lists.
+		/// <para>Client login validation, return to the chat server (currently the end is responsible for) and (at least) against the server address, full room list provided by the end of</para>
+		/// <para>Request the room list, returns the waiting room
+		/// <para>As the room changes, push</para></para>
+		/// <para>When the client enters the game, send a pause message, push the pause, quit the game, requesting a room list</para>
 		/// </summary>
 		/// <param name="args">port GameServer.exe config.txt config1.txt config2.txt ...</param>
 		public static void Main(string[] args)

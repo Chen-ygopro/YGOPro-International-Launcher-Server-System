@@ -17,19 +17,19 @@ namespace YGOCore
 	{
 		Error,
 		/// <summary>
-		/// 请求房间列表
+		/// Request the room list
 		/// </summary>
 		RoomList,
 		/// <summary>
-		/// 登录/服务器信息
+		/// Log in/Server information
 		/// </summary>
 		Info,
 		/// <summary>
-		/// 聊天
+		/// Chat
 		/// </summary>
 		Chat,
 		/// <summary>
-		/// 暂停推送
+		/// Push pause
 		/// </summary>
 		Pause,
 		RoomCreate,

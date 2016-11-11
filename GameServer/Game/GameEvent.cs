@@ -10,11 +10,11 @@ using System.IO;
 namespace YGOCore.Net
 {
 	/// <summary>
-	/// 游戏事件处理
+	/// Game events
 	/// </summary>
 	public static class GameEvent
 	{
-		#region 消息匹配
+		#region Message match
 		static readonly EventHandler<ushort, GameSession, GameClientPacket> EventHandler = new EventHandler<ushort, GameSession, GameClientPacket>();
 		
 		static GameEvent(){
@@ -81,7 +81,7 @@ namespace YGOCore.Net
 
 		#endregion
 		
-		#region 消息
+		#region News
 		public static void LobbyError(this GameSession client, string message,bool isNow=true)
 		{
 			using(GameServerPacket join = new GameServerPacket(StocMessage.JoinGame)){
@@ -119,7 +119,7 @@ namespace YGOCore.Net
 		}
 		#endregion
 		
-		#region 玩家信息/登录
+		#region Player Info/login
 		public static void OnPlayerInfo(GameSession client, GameClientPacket packet){
 			if (client.Name != null)
 				return;
@@ -137,7 +137,7 @@ namespace YGOCore.Net
 		}
 		#endregion
 		
-		#region 加入游戏
+		#region Join the game
 		public static bool CheckAuth(this GameSession client, string namepassword){
 			if(namepassword==null){
 				return true;
@@ -224,7 +224,7 @@ namespace YGOCore.Net
 		}
 		#endregion
 		
-		#region 创建游戏
+		#region Create game
 		public static void OnCreateGame(GameSession client, GameClientPacket packet){
 			if (string.IsNullOrEmpty(client.Name) || client.Type != (int)PlayerType.Undefined)
 				return;
@@ -265,7 +265,7 @@ namespace YGOCore.Net
 		}
 		#endregion
 		
-		#region 决斗事件
+		#region Dueling events
 		public static void OnTimeConfirm(GameSession client, GameClientPacket packet){
 			if(client!=null){
 				//Logger.Debug("OnTimeConfirm "+client.Name);
@@ -363,7 +363,7 @@ namespace YGOCore.Net
 		}
 		#endregion
 		
-		#region 决斗前
+		#region Before the duel
 		public static void OnKick(GameSession client, GameClientPacket packet){
 			int pos = packet.ReadByte();
 			if(client.Game!=null)
