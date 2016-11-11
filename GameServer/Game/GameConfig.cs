@@ -9,7 +9,7 @@ namespace YGOCore.Game
 		}
 		//	private static Regex NameRegex=new Regex("^[0-9A-Za-z_\\s.]+$");
 		public int LfList { get; set; }
-		public string BanList{get; set;}
+		public string BanList{get; set; }
 		//012
 		public int Rule { get; set; }
 		//012

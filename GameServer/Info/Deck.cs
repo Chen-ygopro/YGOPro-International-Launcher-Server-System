@@ -61,7 +61,7 @@ namespace YGOCore.Game
         /// <param name="ban"></param>
         /// <param name="ocg"></param>
         /// <param name="tcg"></param>
-        /// <returns>1数量，2空卡，卡片规则不符合</returns>
+        /// <returns>Number 1, 2 blank cards, card rule does not meet the</returns>
 		public int Check(Banlist ban, bool ocg, bool tcg)
 		{
 			if (Main.Count < 40 || Main.Count > 60 || Extra.Count > 15 || Side.Count > 15)

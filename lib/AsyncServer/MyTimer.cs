@@ -17,8 +17,8 @@ namespace AsyncServer
 		/// <summary>
 		/// 
 		/// </summary>
-		/// <param name="interval">每隔多少毫秒</param>
-		/// <param name="maxtime">最大秒数</param>
+		/// <param name="interval">how many seconds</param>
+		/// <param name="maxtime">Maximum number of seconds</param>
 		public MyTimer(long interval, long maxtime) : base(interval) {
 			timer = DateTime.Now;
 			this.maxtime=maxtime;

@@ -23,9 +23,9 @@ namespace System
         [DllImport("Kernel32")]
         public extern static int FormatMessage(int flag, ref IntPtr source, int msgid, int langid, ref string buf, int size, ref IntPtr args);
         /// <summary>
-        /// 获取系统错误信息描述
+        /// Gets a system error message descriptions
         /// </summary>
-        /// <param name="errCode">系统错误码</param>
+        /// <param name="errCode">System error code</param>
         /// <returns></returns>
         public static string GetSysErrMsg(int errCode)
         {

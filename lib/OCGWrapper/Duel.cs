@@ -200,7 +200,7 @@ namespace OcgWrapper
 				return null;
 			lock(Duels){
 				if(Duels.ContainsKey(pDuel)){
-					//返回存在的？
+					//Return exist？
 					return Duels[pDuel];
 				}
 			}

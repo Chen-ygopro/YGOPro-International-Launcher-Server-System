@@ -18,7 +18,7 @@ namespace WindBot
 
 		public static void Main(string[] args)
 		{
-			//暂时不用开启
+			//Does not turn on
 			Replay=false;
 			if(args.Length < 3)
 			{

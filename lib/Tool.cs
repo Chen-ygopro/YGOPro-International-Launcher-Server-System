@@ -20,7 +20,7 @@ namespace YGOCore
     /// </summary>
     public class Tool
     {
-        #region 获取网址内容
+        #region Gets the Web site content
         public static string PostHtmlContentByUrl(string url, string param, int outtime = 30 * 1000)
         {
             string htmlContent = string.Empty;
@@ -97,7 +97,7 @@ namespace YGOCore
             return "";
         }
         #endregion
-        #region MD5校验
+        #region MD5check
 
         public static string SubString(string str, int i, int len)
         {
@@ -113,7 +113,7 @@ namespace YGOCore
             return str.Substring(i, str.Length - i);
         }
         /// <summary>
-        /// MD5　32位加密
+        /// MD5　32Bit encryption
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -121,13 +121,13 @@ namespace YGOCore
         {
             string cl = str;
             string pwd = "";
-            MD5 md5 = MD5.Create();//实例化一个md5对像
-                                   // 加密后是一个字节类型的数组，这里要注意编码UTF8/Unicode等的选择
+            MD5 md5 = MD5.Create();//Instantiate a MD5
+                                   // Encryption type is a byte array, choice of encoding UTF8/Unicode to note here
             byte[] s = md5.ComputeHash(Encoding.UTF8.GetBytes(cl));
-            // 通过使用循环，将字节类型的数组转换为字符串，此字符串是常规字符格式化所得
+            // By using a loop, an array of type byte is converted to a string, which is derived from normal character formatting
             for (int i = 0; i < s.Length; i++)
             {
-                // 将得到的字符串使用十六进制类型格式。格式后的字符是小写的字母，如果使用大写（X）则格式后的字符是大写字符
+                // The resulting string uses the hexadecimal type format。Format characters are lowercase letters，If you use uppercase（X）The format characters are uppercase
 
                 pwd = pwd + s[i].ToString("x2");
 
@@ -135,7 +135,7 @@ namespace YGOCore
             return pwd;
         }
         /// <summary>
-        /// 计算文件的MD5校验
+        /// Calculate file MD5 checksum
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
@@ -167,7 +167,7 @@ namespace YGOCore
         }
         #endregion
 
-        #region 文件路径
+        #region File path
         public static string GetDir(string file)
         {
             string dir = null;
@@ -210,7 +210,7 @@ namespace YGOCore
         }
 
         /// <summary>
-        /// 合并路径
+        /// Merge paths
         /// </summary>
         /// <param name="paths"></param>
         /// <returns></returns>
@@ -261,7 +261,7 @@ namespace YGOCore
 
         #region string unicode
         /// <summary>
-        /// 字符串转为UniCode码字符串
+        /// String to Unicode code string
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
@@ -279,7 +279,7 @@ namespace YGOCore
             return sb.ToString();
         }
         /// <summary>
-        /// Unicode字符串转为正常字符串
+        /// Unicode String conversion to normal string
         /// </summary>
         /// <param name="srcText"></param>
         /// <returns></returns>

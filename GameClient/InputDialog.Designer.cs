@@ -36,47 +36,48 @@ namespace GameClient
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.btn_ok = new System.Windows.Forms.Button();
-			this.SuspendLayout();
-			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(25, 29);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(188, 21);
-			this.textBox1.TabIndex = 0;
-			// 
-			// btn_ok
-			// 
-			this.btn_ok.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.btn_ok.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btn_ok.Location = new System.Drawing.Point(64, 65);
-			this.btn_ok.Name = "btn_ok";
-			this.btn_ok.Size = new System.Drawing.Size(107, 39);
-			this.btn_ok.TabIndex = 1;
-			this.btn_ok.Text = "确定";
-			this.btn_ok.UseVisualStyleBackColor = true;
-			this.btn_ok.Click += new System.EventHandler(this.Btn_okClick);
-			// 
-			// InputDialog
-			// 
-			this.AcceptButton = this.btn_ok;
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(240, 120);
-			this.Controls.Add(this.btn_ok);
-			this.Controls.Add(this.textBox1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-			this.MaximizeBox = false;
-			this.MinimizeBox = false;
-			this.Name = "InputDialog";
-			this.ShowIcon = false;
-			this.ShowInTaskbar = false;
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "InputDialog";
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_ok = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(25, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(188, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // btn_ok
+            // 
+            this.btn_ok.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_ok.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_ok.Location = new System.Drawing.Point(64, 70);
+            this.btn_ok.Name = "btn_ok";
+            this.btn_ok.Size = new System.Drawing.Size(107, 42);
+            this.btn_ok.TabIndex = 1;
+            this.btn_ok.Text = "Join Duel";
+            this.btn_ok.UseVisualStyleBackColor = true;
+            this.btn_ok.Click += new System.EventHandler(this.Btn_okClick);
+            // 
+            // InputDialog
+            // 
+            this.AcceptButton = this.btn_ok;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(240, 130);
+            this.Controls.Add(this.btn_ok);
+            this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "InputDialog";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Password";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
 		}
 		private System.Windows.Forms.Button btn_ok;
 		private System.Windows.Forms.TextBox textBox1;

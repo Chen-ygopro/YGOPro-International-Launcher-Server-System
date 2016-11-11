@@ -155,7 +155,7 @@ namespace YGOCore.Game
 			}
 		}
 		/// <summary>
-		/// 换side
+		/// Change side
 		/// </summary>
 		private const int SIDE_TIMEOUT = 120;
 		/// <summary>

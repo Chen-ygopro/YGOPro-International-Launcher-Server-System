@@ -89,5 +89,10 @@ namespace GameClient
 				}
 			}catch{}
 		}
-	}
+
+        private void CreateRoomForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

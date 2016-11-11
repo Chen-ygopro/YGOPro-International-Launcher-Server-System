@@ -18,7 +18,7 @@ namespace GameClient
 	public class ClientConfig
 	{
 		/// <summary>
-		/// 进入房间，暂停推送
+		/// Enter the room b，Push the pause
 		/// </summary>
 		public bool JoinPause{get;set;}
 		

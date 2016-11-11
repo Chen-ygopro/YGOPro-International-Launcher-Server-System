@@ -19,7 +19,7 @@ namespace YGOCore
 	/// </summary>
 	public static class ServerEvent
 	{
-		#region 消息匹配
+		#region Message match
 		static readonly EventHandler<ushort, DuelServer, PacketReader> EventHandler = new EventHandler<ushort, DuelServer, PacketReader>();
 		
 		static ServerEvent(){

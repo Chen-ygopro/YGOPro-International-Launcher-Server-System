@@ -11,15 +11,15 @@ namespace AsyncServer
     public class AClient : IDisposable
     {
         /// <summary>
-        /// 接收队列
+        /// Receive queue
         /// </summary>
         protected readonly ArrayQueue<byte> ReceiveQueue = new ArrayQueue<byte>();
         /// <summary>
-        /// 发送队列
+        /// Send queue
         /// </summary>
         protected readonly Queue<byte[]> m_PendingBuffer = new Queue<byte[]>();
         /// <summary>
-        /// 是否连接
+        /// Is connected
         /// </summary>
         public bool Connected
         {
@@ -29,7 +29,7 @@ namespace AsyncServer
             }
         }
         /// <summary>
-        /// ip地址
+        /// ipAddress
         /// </summary>
         public System.Net.IPAddress Address
         {
@@ -57,7 +57,7 @@ namespace AsyncServer
             }
         }
         /// <summary>
-        /// 是否是异步
+        /// If asynchronous is
         /// </summary>
         public bool IsSync
         {

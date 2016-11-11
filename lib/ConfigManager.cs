@@ -7,9 +7,9 @@ namespace System.Xml
 	{
 		public static string XmlFile = System.Windows.Forms.Application.ExecutablePath + ".config";
 		
-		#region 读取内容
+		#region Read the contents
 		/// <summary>
-		/// 读取字符串值
+		/// Reads a string value
 		/// </summary>
 		/// <param name="key"></param>
 		/// <returns></returns>
@@ -23,7 +23,7 @@ namespace System.Xml
             return val;
 		}
 		/// <summary>
-		/// 读取int值
+		/// Int value read
 		/// </summary>
 		/// <param name="key"></param>
 		/// <param name="def"></param>
@@ -36,7 +36,7 @@ namespace System.Xml
 			return def;
 		}
 		/// <summary>
-		/// 读取float值
+		/// Float value read
 		/// </summary>
 		/// <param name="key"></param>
 		/// <param name="def"></param>
@@ -49,7 +49,7 @@ namespace System.Xml
 			return def;
 		}
 		/// <summary>
-		/// 读取int数组
+		/// Reads an array of int
 		/// </summary>
 		/// <param name="key"></param>
 		/// <param name="length"></param>
@@ -70,7 +70,7 @@ namespace System.Xml
 			return ints;
 		}
 		/// <summary>
-		/// 读取boolean
+		/// Reading Boolean
 		/// </summary>
 		/// <param name="key"></param>
 		/// <returns></returns>
@@ -86,9 +86,9 @@ namespace System.Xml
 				return false;
 		}
 		#endregion
-		#region XML操作config
+		#region XMLAction config
 		/// <summary>
-		/// 保存值
+		/// Save value
 		/// </summary>
 		/// <param name="appKey"></param>
 		/// <param name="appValue"></param>
@@ -103,9 +103,9 @@ namespace System.Xml
 			XmlNode xNode = xDoc.SelectSingleNode("//appSettings");
 
 			XmlElement xElem = (XmlElement)xNode.SelectSingleNode("//add[@key='" + appKey + "']");
-			if (xElem != null) //存在，则更新
+			if (xElem != null) //There are，Update
 				xElem.SetAttribute("value", appValue);
-			else//不存在，则插入
+			else//Does not exist，Insert
 			{
 				XmlElement xNewElem = xDoc.CreateElement("add");
 				xNewElem.SetAttribute("key", appKey);
@@ -115,7 +115,7 @@ namespace System.Xml
 			xDoc.Save(file);
 		}
 		/// <summary>
-		/// 获取值
+		/// Get the value
 		/// </summary>
 		/// <param name="appKey"></param>
 		/// <returns></returns>

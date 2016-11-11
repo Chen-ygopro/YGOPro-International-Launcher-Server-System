@@ -54,7 +54,7 @@ namespace GameClient
         public bool IsLogin = false;
         private Random random = new Random(Environment.TickCount);
         readonly ArrayQueue<byte> ReceviceQueue = new ArrayQueue<byte>();
-        //名字，房间名
+        //First name，Room name
         public Client()
         {
         }
@@ -121,7 +121,7 @@ namespace GameClient
             catch (Exception e)
             {
                 Logger.Warn(e);
-                System.Windows.Forms.MessageBox.Show("服务器已经断开"
+                System.Windows.Forms.MessageBox.Show("You have logged out"
 #if DEBUG
 				                                     +"\n"+e
 #endif
@@ -203,7 +203,7 @@ namespace GameClient
             }
             catch (Exception)
             {
-                System.Windows.Forms.MessageBox.Show("断开连接");
+                System.Windows.Forms.MessageBox.Show("Disconnected");
             }
         }
         private void EndSend(IAsyncResult ar)
@@ -221,7 +221,7 @@ namespace GameClient
 
         #region login/chat
         /// <summary>
-        /// 联网登录
+        /// Network login
         /// </summary>
         public void Login(string name, string pwd,bool force = false)
         {
@@ -238,7 +238,7 @@ namespace GameClient
             }
         }
         /// <summary>
-        /// 发送聊天消息
+        /// Send a chat message
         /// </summary>
         public bool OnChat(string msg, bool hidename, string toname = "")
         {
@@ -251,11 +251,11 @@ namespace GameClient
                     {
                         if (random.Next(100) < 10)
                         {
-                            writer.WriteUnicode("[匿名]"+ Name, 20);
+                            writer.WriteUnicode("[Anonymous]"+ Name, 20);
                         }
                         else {
-                            //90%匿名
-                            writer.WriteUnicode("[匿名]", 20);
+                            //90%Anonymous
+                            writer.WriteUnicode("[Anonymous]", 20);
                         }
                     }
                     else {
@@ -282,7 +282,7 @@ namespace GameClient
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="pname">消息者</param>
+        /// <param name="pname">News</param>
         /// <param name="msg"></param>
         public void ServerChat(string pname, string tname, string msg)
         {

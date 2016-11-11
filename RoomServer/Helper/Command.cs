@@ -37,11 +37,11 @@ namespace YGOCore
 					if(args.Length>1){
 						int i = 0;
 						int.TryParse(args[1], out i);
-                        //服务信息，玩家数，房间数
+                        //Service information, number of players and number of rooms
                         server.PrintServer(i);
                     }
                     else{
-                        //数量
+                        //The number of
                         server.PrintServer();
                     }
 					break;
@@ -50,7 +50,7 @@ namespace YGOCore
                     {
                         int i = 0;
                         int.TryParse(args[1], out i);
-                        //服务信息，玩家数，房间数
+                        //Service information, number of players and number of rooms
                         lock (server.Porcess)
                         {
                             if (i < server.Porcess.Count)
@@ -61,7 +61,7 @@ namespace YGOCore
                         }
                     }
                     else {
-                        //数量
+                        //The number of
                         Console.WriteLine(">>hide %1");
                     }
                     break;
@@ -70,7 +70,7 @@ namespace YGOCore
                     {
                         int i = 0;
                         int.TryParse(args[1], out i);
-                        //服务信息，玩家数，房间数
+                        //Service information, number of players and number of rooms
                         lock (server.Porcess)
                         {
                             if (i < server.Porcess.Count)
@@ -81,7 +81,7 @@ namespace YGOCore
                         }
                     }
                     else {
-                        //数量
+                        //The number of
                         Console.WriteLine(">>show %1");
                     }
                     break;
@@ -89,7 +89,7 @@ namespace YGOCore
 					if(args.Length>1){
 						int i = 0;
 						int.TryParse(args[1], out i);
-						//服务信息，玩家数，房间数
+						//Service information, number of players and number of rooms
 						lock(server.Porcess){
 							if(i<server.Porcess.Count){
 								ServerProcess p = server.Porcess[i];
@@ -99,16 +99,16 @@ namespace YGOCore
 							}
 						}
 					}else{
-						//数量
+						//The number of
 						server.Stop();
 					}
 					break;
                 case "help":
-                    Console.WriteLine(">>server %1  查看所有服务器信息，参数：0-max，显示某个服务器信息，不填则是全部");
-                    Console.WriteLine(">>say %1     服务器公告，每3分钟发送一次，参数：消息内容");
-                    Console.WriteLine(">>hide %1    查看所有服务器信息，参数：0-max，隐藏某个服务器");
-                    Console.WriteLine(">>show %1    查看所有服务器信息，参数：0-max，显示某个服务器");
-                    Console.WriteLine(">>close %1   查看所有服务器信息，参数：0-max，关闭某个服务器");
+                    Console.WriteLine(">>server %1 View all server information");
+                    Console.WriteLine(">>say %1      View all server information");
+                    Console.WriteLine(">>hide %1     View all server information");
+                    Console.WriteLine(">>show %1    View all server information ");
+                    Console.WriteLine(">>close %1   shutdown server");
                     break;
 				default:
 					if(tip)

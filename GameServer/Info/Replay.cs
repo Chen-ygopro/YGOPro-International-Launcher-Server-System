@@ -26,7 +26,7 @@ namespace YGOCore.Game
 		private byte[] m_data;
 		private bool m_close;
 		/// <summary>
-		/// 保存路径
+		/// The save path
 		/// </summary>
 		private string fileName;
 
@@ -61,7 +61,7 @@ namespace YGOCore.Game
 			Header.DataSize = (uint)raw.Length;
 			Header.Props = new byte[8];
 			if(Compressed){
-				//录像不压缩
+				//Video is not compressed
 				Header.Flag |= FlagCompressed;
 				Encoder lzma = new Encoder();
 				using (MemoryStream props = new MemoryStream(Header.Props)){

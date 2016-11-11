@@ -19,7 +19,7 @@ namespace YGOCore
 	/// </summary>
 	public static class ClinetEvent
 	{
-		#region 消息匹配
+		#region Message match
 		static readonly EventHandler<ushort, Session, PacketReader> EventHandler = new EventHandler<ushort, Session, PacketReader>();
 
 		static ClinetEvent()
@@ -80,7 +80,7 @@ namespace YGOCore
 		}
 		#endregion
 
-		#region 处理客户端消息
+		#region Processing client messages
 		public static void LobbyError(this Session session, string message)
 		{
 			using (PacketWriter join = new PacketWriter(2))
@@ -157,16 +157,16 @@ namespace YGOCore
 		}
 		private static void On302(Session session, PacketReader packet)
 		{
-			session.LobbyError("这是聊天室端口");
+			session.LobbyError("This is the chat room port");
 			DuelServer srv = session.Server.GetMinServer();
-			session.SendMessage("这是聊天端口，随便说一句话即可和所有人聊天。");
-			session.SendMessage("你的短密码是:"+session.Token+" (用户名:"+session.Name+"$"+session.Token+")");
+			session.SendMessage("It's chat ports and say a Word, and all chats。");
+			session.SendMessage("Your short passwords are:"+session.Token+" (User name:"+session.Name+"$"+session.Token+")");
 			if (srv != null && srv.Port > 0)
 			{
-				session.SendMessage("推荐对战端口:" + srv.Port);
+				session.SendMessage("Recommended game port:" + srv.Port);
 			}
 			List<int> ports = session.Server.GetAllPorts();
-			string msg = "所有对战端口:";
+			string msg = "All the game port:";
 			foreach (int p in ports)
 			{
 				msg += p + ",";
@@ -211,18 +211,18 @@ namespace YGOCore
 		{
 			session.OnPlayerList();
 		}
-		//登录
+		//Login
 		private static void OnInfo(Session session, PacketReader packet)
 		{
 			string name = packet.ReadUnicode(20);
 			string pwd = packet.ReadUnicode(32);//md5
-			//登录
+			//Login
 			bool force = packet.ReadBoolean();
 			if (Login(name, pwd))
 			{
 				session.Name = name;
 				session.IsPause = false;
-				//返回聊天端口，对战端口
+				//Back chat ports, game ports
 				if (session.Server != null)
 				{
 					lock (session.Server.Clients)
@@ -232,7 +232,7 @@ namespace YGOCore
 						{
 							if (force)
 							{
-								old.SendError("[err]你的账号在其他地方登录");
+								old.SendError("[err] You are already loggedin");
 								old.Name = "";
 								//   old.Close();
 							}
@@ -240,7 +240,7 @@ namespace YGOCore
 							{
 								session.IsLogin = false;
 								session.IsPause = true;
-								session.SendError("[err]已经登录");
+								session.SendError("[err]Already logged on");
 								return;
 							}
 						}
@@ -258,7 +258,7 @@ namespace YGOCore
 				}
 			}
 			else {
-				session.SendError("[err]认证失败");
+				session.SendError("[err]Authentication failed");
 			}
 		}
 		private static void OnChat(Session session, PacketReader packet)

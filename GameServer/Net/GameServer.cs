@@ -84,7 +84,7 @@ namespace YGOCore.Net
 			return true;
 		}
 		/// <summary>
-		/// 停止
+		/// Stop it
 		/// </summary>
 		public void Stop(){
 			if(IsListening){
@@ -117,7 +117,7 @@ namespace YGOCore.Net
 		void Listener_OnReceive(Connection<GameSession> Client)
 		{
 			if(Client!=null && Client.Tag!=null){
-				//处理接收数据
+				//Processing received data
 				Client.Tag.OnReceive(null);
 				//ThreadPool.QueueUserWorkItem(Client.Tag.OnReceive);
 			}
@@ -126,7 +126,7 @@ namespace YGOCore.Net
 		void Listener_OnConnect(Connection<GameSession> Client)
 		{
 			if(Client!=null){
-				//绑定关系
+				//The binding between the
 				GameSession session = new GameSession(Client, Config.ClientVersion,Config.Timeout);
 				Client.SetSync(Config.AsyncMode);
 				Client.Tag = session;

@@ -45,7 +45,6 @@ namespace GameClient
             this.label3 = new System.Windows.Forms.Label();
             this.cb_timeout = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.chk_sp1 = new System.Windows.Forms.CheckBox();
             this.chk_sp2 = new System.Windows.Forms.CheckBox();
             this.chk_sp3 = new System.Windows.Forms.CheckBox();
@@ -61,17 +60,18 @@ namespace GameClient
             this.label11 = new System.Windows.Forms.Label();
             this.tb_password = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_create
             // 
             this.btn_create.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_create.Location = new System.Drawing.Point(8, 361);
+            this.btn_create.Location = new System.Drawing.Point(8, 391);
             this.btn_create.Name = "btn_create";
-            this.btn_create.Size = new System.Drawing.Size(244, 42);
+            this.btn_create.Size = new System.Drawing.Size(244, 46);
             this.btn_create.TabIndex = 0;
-            this.btn_create.Text = "创建房间";
+            this.btn_create.Text = "Create";
             this.btn_create.UseVisualStyleBackColor = true;
             this.btn_create.Click += new System.EventHandler(this.Btn_createClick);
             // 
@@ -81,31 +81,31 @@ namespace GameClient
             this.cb_mode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cb_mode.FormattingEnabled = true;
             this.cb_mode.Items.AddRange(new object[] {
-            "单局模式",
-            "比赛模式",
-            "双打模式"});
-            this.cb_mode.Location = new System.Drawing.Point(85, 74);
+            "Single",
+            "Tag",
+            "Match"});
+            this.cb_mode.Location = new System.Drawing.Point(85, 80);
             this.cb_mode.Name = "cb_mode";
-            this.cb_mode.Size = new System.Drawing.Size(156, 20);
+            this.cb_mode.Size = new System.Drawing.Size(156, 21);
             this.cb_mode.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 76);
+            this.label1.Location = new System.Drawing.Point(13, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 11;
-            this.label1.Text = "决斗模式";
+            this.label1.Text = "Duel Mode";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 46);
+            this.label2.Location = new System.Drawing.Point(14, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 11;
-            this.label2.Text = "卡片允许";
+            this.label2.Text = "Allowed cards";
             // 
             // cb_rule
             // 
@@ -116,9 +116,9 @@ namespace GameClient
             "OCG",
             "TCG",
             "OCG＆TCG"});
-            this.cb_rule.Location = new System.Drawing.Point(83, 42);
+            this.cb_rule.Location = new System.Drawing.Point(83, 46);
             this.cb_rule.Name = "cb_rule";
-            this.cb_rule.Size = new System.Drawing.Size(158, 20);
+            this.cb_rule.Size = new System.Drawing.Size(158, 21);
             this.cb_rule.TabIndex = 2;
             // 
             // cb_banlist
@@ -129,19 +129,19 @@ namespace GameClient
             this.cb_banlist.Items.AddRange(new object[] {
             "OCG",
             "TCG"});
-            this.cb_banlist.Location = new System.Drawing.Point(84, 12);
+            this.cb_banlist.Location = new System.Drawing.Point(84, 13);
             this.cb_banlist.Name = "cb_banlist";
-            this.cb_banlist.Size = new System.Drawing.Size(157, 20);
+            this.cb_banlist.Size = new System.Drawing.Size(157, 21);
             this.cb_banlist.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 17);
+            this.label3.Location = new System.Drawing.Point(14, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "禁限卡表";
+            this.label3.Text = "Banlist";
             // 
             // cb_timeout
             // 
@@ -158,65 +158,56 @@ namespace GameClient
             "7",
             "8",
             "9"});
-            this.cb_timeout.Location = new System.Drawing.Point(85, 107);
+            this.cb_timeout.Location = new System.Drawing.Point(85, 116);
             this.cb_timeout.Name = "cb_timeout";
-            this.cb_timeout.Size = new System.Drawing.Size(89, 20);
+            this.cb_timeout.Size = new System.Drawing.Size(89, 21);
             this.cb_timeout.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 110);
+            this.label4.Location = new System.Drawing.Point(6, 119);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "每回合时间";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(183, 112);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "分钟";
+            this.label4.Text = "Time Limit";
             // 
             // chk_sp1
             // 
             this.chk_sp1.AutoSize = true;
-            this.chk_sp1.Location = new System.Drawing.Point(6, 21);
+            this.chk_sp1.Location = new System.Drawing.Point(6, 23);
             this.chk_sp1.Name = "chk_sp1";
-            this.chk_sp1.Size = new System.Drawing.Size(102, 16);
+            this.chk_sp1.Size = new System.Drawing.Size(98, 17);
             this.chk_sp1.TabIndex = 9;
-            this.chk_sp1.Text = "使用大师规则2";
+            this.chk_sp1.Text = "Obsolete Rules";
             this.chk_sp1.UseVisualStyleBackColor = true;
             // 
             // chk_sp2
             // 
-            this.chk_sp2.Location = new System.Drawing.Point(6, 40);
+            this.chk_sp2.Location = new System.Drawing.Point(6, 43);
             this.chk_sp2.Name = "chk_sp2";
-            this.chk_sp2.Size = new System.Drawing.Size(104, 24);
+            this.chk_sp2.Size = new System.Drawing.Size(116, 26);
             this.chk_sp2.TabIndex = 9;
-            this.chk_sp2.Text = "不检查卡组";
+            this.chk_sp2.Text = "Don\'t Check Deck";
             this.chk_sp2.UseVisualStyleBackColor = true;
             // 
             // chk_sp3
             // 
-            this.chk_sp3.Location = new System.Drawing.Point(6, 66);
+            this.chk_sp3.Location = new System.Drawing.Point(6, 72);
             this.chk_sp3.Name = "chk_sp3";
-            this.chk_sp3.Size = new System.Drawing.Size(104, 24);
+            this.chk_sp3.Size = new System.Drawing.Size(104, 26);
             this.chk_sp3.TabIndex = 9;
-            this.chk_sp3.Text = "不洗切卡组";
+            this.chk_sp3.Text = "Do Not Shuffel";
             this.chk_sp3.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 239);
+            this.label6.Location = new System.Drawing.Point(13, 259);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 12);
+            this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 11;
-            this.label6.Text = "初始LP";
+            this.label6.Text = "StartingLP";
             // 
             // cb_lp
             // 
@@ -233,18 +224,18 @@ namespace GameClient
             "7",
             "8",
             "9"});
-            this.cb_lp.Location = new System.Drawing.Point(85, 235);
+            this.cb_lp.Location = new System.Drawing.Point(85, 255);
             this.cb_lp.Name = "cb_lp";
-            this.cb_lp.Size = new System.Drawing.Size(47, 20);
+            this.cb_lp.Size = new System.Drawing.Size(47, 21);
             this.cb_lp.TabIndex = 5;
             this.cb_lp.SelectedIndexChanged += new System.EventHandler(this.Cb_lpSelectedIndexChanged);
             // 
             // lb_lp
             // 
             this.lb_lp.AutoSize = true;
-            this.lb_lp.Location = new System.Drawing.Point(139, 240);
+            this.lb_lp.Location = new System.Drawing.Point(139, 260);
             this.lb_lp.Name = "lb_lp";
-            this.lb_lp.Size = new System.Drawing.Size(77, 12);
+            this.lb_lp.Size = new System.Drawing.Size(72, 13);
             this.lb_lp.TabIndex = 11;
             this.lb_lp.Text = "x4000 = 8000";
             // 
@@ -263,19 +254,19 @@ namespace GameClient
             "7",
             "8",
             "9"});
-            this.cb_hand.Location = new System.Drawing.Point(85, 270);
+            this.cb_hand.Location = new System.Drawing.Point(85, 293);
             this.cb_hand.Name = "cb_hand";
-            this.cb_hand.Size = new System.Drawing.Size(47, 20);
+            this.cb_hand.Size = new System.Drawing.Size(47, 21);
             this.cb_hand.TabIndex = 6;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 273);
+            this.label8.Location = new System.Drawing.Point(10, 296);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 12);
+            this.label8.Size = new System.Drawing.Size(72, 13);
             this.label8.TabIndex = 11;
-            this.label8.Text = "初始手牌数";
+            this.label8.Text = "Starting Hand";
             // 
             // cb_draw
             // 
@@ -292,50 +283,50 @@ namespace GameClient
             "7",
             "8",
             "9"});
-            this.cb_draw.Location = new System.Drawing.Point(211, 270);
+            this.cb_draw.Location = new System.Drawing.Point(211, 293);
             this.cb_draw.Name = "cb_draw";
-            this.cb_draw.Size = new System.Drawing.Size(47, 20);
+            this.cb_draw.Size = new System.Drawing.Size(47, 21);
             this.cb_draw.TabIndex = 7;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(137, 274);
+            this.label9.Location = new System.Drawing.Point(137, 297);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 12);
+            this.label9.Size = new System.Drawing.Size(73, 13);
             this.label9.TabIndex = 11;
-            this.label9.Text = "每回合抽卡";
+            this.label9.Text = "Card per draw";
             // 
             // tb_name
             // 
-            this.tb_name.Location = new System.Drawing.Point(85, 300);
+            this.tb_name.Location = new System.Drawing.Point(85, 325);
             this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(167, 21);
+            this.tb_name.Size = new System.Drawing.Size(167, 20);
             this.tb_name.TabIndex = 8;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 303);
+            this.label10.Location = new System.Drawing.Point(12, 328);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 12);
+            this.label10.Size = new System.Drawing.Size(66, 13);
             this.label10.TabIndex = 11;
-            this.label10.Text = "房间名称";
+            this.label10.Text = "Room Name";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 337);
+            this.label11.Location = new System.Drawing.Point(11, 365);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 12);
+            this.label11.Size = new System.Drawing.Size(53, 13);
             this.label11.TabIndex = 11;
-            this.label11.Text = "房间密码";
+            this.label11.Text = "Password";
             // 
             // tb_password
             // 
-            this.tb_password.Location = new System.Drawing.Point(83, 334);
+            this.tb_password.Location = new System.Drawing.Point(83, 362);
             this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(169, 21);
+            this.tb_password.Size = new System.Drawing.Size(169, 20);
             this.tb_password.TabIndex = 9;
             // 
             // groupBox1
@@ -343,18 +334,27 @@ namespace GameClient
             this.groupBox1.Controls.Add(this.chk_sp1);
             this.groupBox1.Controls.Add(this.chk_sp2);
             this.groupBox1.Controls.Add(this.chk_sp3);
-            this.groupBox1.Location = new System.Drawing.Point(10, 134);
+            this.groupBox1.Location = new System.Drawing.Point(10, 145);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(242, 95);
+            this.groupBox1.Size = new System.Drawing.Size(242, 103);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "特殊设置";
+            this.groupBox1.Text = "Special Settings";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(183, 121);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Minutes";
             // 
             // CreateRoomForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 409);
+            this.ClientSize = new System.Drawing.Size(264, 443);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.tb_name);
@@ -384,7 +384,8 @@ namespace GameClient
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "创建房间";
+            this.Text = "Host";
+            this.Load += new System.EventHandler(this.CreateRoomForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -406,7 +407,6 @@ namespace GameClient
 		private System.Windows.Forms.CheckBox chk_sp3;
 		private System.Windows.Forms.CheckBox chk_sp2;
 		private System.Windows.Forms.CheckBox chk_sp1;
-		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.ComboBox cb_timeout;
 		private System.Windows.Forms.Label label3;
@@ -416,5 +416,6 @@ namespace GameClient
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ComboBox cb_mode;
 		private System.Windows.Forms.Button btn_create;
-	}
+        private System.Windows.Forms.Label label5;
+    }
 }

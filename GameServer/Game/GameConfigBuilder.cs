@@ -17,7 +17,7 @@ namespace YGOCore.Game
     {
         public static GameConfig Build(string gameinfo)
         {
-            //默认值
+            //The default value
             GameConfig config = new GameConfig();
             config.IsRandom = true;
             config.LfList = 0;
@@ -54,12 +54,12 @@ namespace YGOCore.Game
                     string _name = RoomManager.RandomRoomName(gameinfo);
                     if (_name == null)
                     {
-                        //条件#的随机房间名没找到，则创建一个
+                        //# Random room,the condition name not found，Create 
                         config.Name = gameinfo + RoomManager.NewRandomRoomName();
                     }
                     else
                     {
-                        //条件#的随机房间名存在，则进去，可能重复观战
+                        //Conditional random room # name，Entered ，Probably repeat watching
                         config.Name = _name;
                         Logger.Debug("1," + config.Name);
                     }

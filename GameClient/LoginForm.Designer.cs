@@ -4,7 +4,7 @@
  * 日期: 2015/11/7
  * 时间: 20:34
  * 
- * 要改变这种模板请点击 工具|选项|代码编写|编辑标准头文件
+ * To change this template please click on Tools | | | Edit to code the standard header file
  */
 namespace GameClient
 {
@@ -53,56 +53,56 @@ namespace GameClient
             // btn_login
             // 
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_login.Location = new System.Drawing.Point(229, 27);
+            this.btn_login.Location = new System.Drawing.Point(229, 29);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(87, 54);
+            this.btn_login.Size = new System.Drawing.Size(87, 59);
             this.btn_login.TabIndex = 4;
-            this.btn_login.Text = "登录";
+            this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.Button_Login_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 26);
+            this.label1.Location = new System.Drawing.Point(14, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "用户名";
+            this.label1.Text = "Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 69);
+            this.label2.Location = new System.Drawing.Point(14, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "密码";
+            this.label2.Text = "Password";
             // 
             // tb_username
             // 
-            this.tb_username.Location = new System.Drawing.Point(61, 26);
+            this.tb_username.Location = new System.Drawing.Point(61, 28);
             this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(162, 21);
+            this.tb_username.Size = new System.Drawing.Size(162, 20);
             this.tb_username.TabIndex = 0;
             // 
             // tb_password
             // 
-            this.tb_password.Location = new System.Drawing.Point(61, 66);
+            this.tb_password.Location = new System.Drawing.Point(61, 72);
             this.tb_password.Name = "tb_password";
             this.tb_password.PasswordChar = '●';
-            this.tb_password.Size = new System.Drawing.Size(162, 21);
+            this.tb_password.Size = new System.Drawing.Size(162, 20);
             this.tb_password.TabIndex = 1;
             // 
             // chb_record
             // 
             this.chb_record.AutoSize = true;
             this.chb_record.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chb_record.Location = new System.Drawing.Point(61, 100);
+            this.chb_record.Location = new System.Drawing.Point(61, 108);
             this.chb_record.Name = "chb_record";
-            this.chb_record.Size = new System.Drawing.Size(70, 16);
+            this.chb_record.Size = new System.Drawing.Size(139, 17);
             this.chb_record.TabIndex = 2;
-            this.chb_record.Text = "记住密码";
+            this.chb_record.Text = "Remember my password";
             this.chb_record.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -110,62 +110,62 @@ namespace GameClient
             this.groupBox1.Controls.Add(this.btn_game);
             this.groupBox1.Controls.Add(this.btn_single);
             this.groupBox1.Controls.Add(this.btn_addai);
-            this.groupBox1.Location = new System.Drawing.Point(5, 126);
+            this.groupBox1.Location = new System.Drawing.Point(5, 137);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(319, 67);
+            this.groupBox1.Size = new System.Drawing.Size(319, 73);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "离线功能";
+            this.groupBox1.Text = "Offline";
             // 
             // btn_game
             // 
             this.btn_game.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_game.Location = new System.Drawing.Point(215, 20);
+            this.btn_game.Location = new System.Drawing.Point(215, 22);
             this.btn_game.Name = "btn_game";
-            this.btn_game.Size = new System.Drawing.Size(100, 37);
+            this.btn_game.Size = new System.Drawing.Size(100, 40);
             this.btn_game.TabIndex = 5;
-            this.btn_game.Text = "启动游戏";
+            this.btn_game.Text = "Puzzle";
             this.btn_game.UseVisualStyleBackColor = true;
             this.btn_game.Click += new System.EventHandler(this.Btn_Game_Click);
             // 
             // btn_single
             // 
             this.btn_single.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_single.Location = new System.Drawing.Point(110, 20);
+            this.btn_single.Location = new System.Drawing.Point(110, 22);
             this.btn_single.Name = "btn_single";
-            this.btn_single.Size = new System.Drawing.Size(100, 37);
+            this.btn_single.Size = new System.Drawing.Size(100, 40);
             this.btn_single.TabIndex = 5;
-            this.btn_single.Text = "残局模式";
+            this.btn_single.Text = "Lanmode";
             this.btn_single.UseVisualStyleBackColor = true;
             this.btn_single.Click += new System.EventHandler(this.Btn_Single_Click);
             // 
             // btn_addai
             // 
             this.btn_addai.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_addai.Location = new System.Drawing.Point(6, 20);
+            this.btn_addai.Location = new System.Drawing.Point(6, 22);
             this.btn_addai.Name = "btn_addai";
-            this.btn_addai.Size = new System.Drawing.Size(100, 37);
+            this.btn_addai.Size = new System.Drawing.Size(100, 40);
             this.btn_addai.TabIndex = 5;
-            this.btn_addai.Text = "添加局域网AI";
+            this.btn_addai.Text = "Add AI";
             this.btn_addai.UseVisualStyleBackColor = true;
             this.btn_addai.Click += new System.EventHandler(this.Btn_addaiClick);
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(229, 93);
+            this.button1.Location = new System.Drawing.Point(229, 101);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 30);
+            this.button1.Size = new System.Drawing.Size(87, 33);
             this.button1.TabIndex = 5;
-            this.button1.Text = "设置游戏路径";
+            this.button1.Text = "Set the game path";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Btn_SetGamePath_Click);
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 199);
+            this.ClientSize = new System.Drawing.Size(332, 216);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chb_record);
@@ -178,7 +178,7 @@ namespace GameClient
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "登录";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

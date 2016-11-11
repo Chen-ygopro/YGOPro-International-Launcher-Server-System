@@ -18,36 +18,36 @@ namespace YGOCore
 	/// </summary>
 	public class Messages
 	{
-		public const string MSG_PLAYER_INGAME="玩家已经在游戏";
-		public const string MSG_CLOSE ="服务器将3分钟后关闭";
-		public const string MSG_HIGH_VERSION="你的游戏版本比服务器的高";
-		public const string MSG_FULL="房间满了";
-		public const string MSG_GAMEOVER="游戏结束";
-		public const string MSG_SEND_FAIL="发送失败";
-		public const string MSG_NO_AI="不能添加AI";
-		public const string MSG_NO_FREE_AI="没有空闲AI";
-		public const string MSG_ADD_AI="添加AI成功";
-		public const string MSG_BAN_PCHAT="私聊已经禁止";
-		public const string MSG_NOCHECKDECK="该房间不检查卡组，可以使用禁卡";
-		public const string MSG_NOSHUFFLEDECK ="该房间卡组不洗牌，小心作弊";
-		public const string MSG_ENABLE_PROIORITY="该房间使用旧规则（先手抽卡，单场地），非正常设置";
-		public const string ERR_NAME_PASSWORD="用户名或者密码错误";
-		public const string ERR_NAME_PASSWORD_LONG="名字和密码的长度过长，请修改密码。";
-		public const string MSG_SIDE="请在120秒内换好side";
-		public const string MSG_DISCONECT="玩家 {0} 掉线，请等待{1}秒，超时则算结束决斗";
-		public const string MSG_TIP_TIME="你还有 {0} 秒 超时";
-		public const string MSG_READY="{0} 准备好";
-		public const string MSG_WATCH_SIDE="正在更换side";
-		public const string MSG_PLAYER_BAN="你的帐号无法登陆本服务器";
-		public const string ERR_NO_NAME="名字不能为空";
-		public const string ERR_NO_PASS="密码不能为空";
-		public const string ERR_AUTH_FAIL="登录失败";
-		public const string ERR_IS_LOGIN="已经登录";
-		public const string ERR_LOW_VERSION="游戏版本太低";
-		public const string ERR_PASSWORD="房间密码错误";
-		public const string ERR_NO_CLIENT ="用户:{0}未在线";
-		
-		public static void Init(string file){
+        public const string MSG_PLAYER_INGAME = "players already in the game";
+        public const string MSG_CLOSE = "server will shut down in 3 minutes";
+        public const string MSG_HIGH_VERSION = "Your game version is higher than the servers";
+        public const string MSG_FULL = "full room";
+        public const string MSG_GAMEOVER = "Game Over";
+        public const string MSG_SEND_FAIL = "Send failed";
+        public const string MSG_NO_AI = "You can not add AI";
+        public const string MSG_NO_FREE_AI = "no idle AI";
+        public const string MSG_ADD_AI = "Add AI success";
+        public const string MSG_BAN_PCHAT = "whisper has banned";
+        public const string MSG_NOCHECKDECK = "This room does not check the deck,";
+        public const string MSG_NOSHUFFLEDECK = "This room does not shuffle the deck";
+        public const string MSG_ENABLE_PROIORITY = "The room with the old rules ";
+        public const string ERR_NAME_PASSWORD = "user name or password is incorrect";
+        public const string ERR_NAME_PASSWORD_LONG = "name and password is too long, please change your password.";
+        public const string MSG_SIDE = "Please change your side within 120 seconds";
+        public const string MSG_DISCONECT = "{0} players dropped, wait {1} seconds, the timeout is counting duel ends";
+        public const string MSG_TIP_TIME = "You have {0} seconds Timeout";
+        public const string MSG_READY = "{0} ready";
+        public const string MSG_WATCH_SIDE = "side deck";
+        public const string MSG_PLAYER_BAN = "Your account can not visit the server";
+        public const string ERR_NO_NAME = "name can not be empty";
+        public const string ERR_NO_PASS = "password can not be empty";
+        public const string ERR_AUTH_FAIL = "Login failed";
+        public const string ERR_IS_LOGIN = "already logged in";
+        public const string ERR_LOW_VERSION = "version of the game is too low";
+        public const string ERR_PASSWORD = "room password";
+        public const string ERR_NO_CLIENT = "User:is not online";
+
+        public static void Init(string file){
 		//	Logger.Debug("msg file="+file);
 			if(File.Exists(file)){
 				Msgs.Clear();

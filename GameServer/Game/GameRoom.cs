@@ -29,7 +29,7 @@ namespace YGOCore.Game
         public bool IsRandom { get; private set; }
         public readonly List<int> CardIds = new List<int>();
         /// <summary>
-        /// 录像
+        /// Video
         /// </summary>
         public Replay Replay;
         public int[] m_handResult;
@@ -42,7 +42,7 @@ namespace YGOCore.Game
         private DateTime? m_time;
         private DateTime? StartTime;
         /// <summary>
-        /// 是否在决斗
+        /// Whether in a duel
         /// </summary>
         public bool IsOpen { get; private set; }
         public bool IsEnd = false;
@@ -66,7 +66,7 @@ namespace YGOCore.Game
         private GameTimer GameTimer;
         #endregion
 
-        #region 初始化
+        #region Initialize
         public GameRoom(GameConfig config)
         {
             Config = config;
@@ -94,7 +94,7 @@ namespace YGOCore.Game
         }
         #endregion
 
-        #region 添加玩家
+        #region Add players
 
         private void SendJoinGame(GameSession player)
         {
@@ -147,7 +147,7 @@ namespace YGOCore.Game
         public void AddPlayer(GameSession player)
         {
             //			if(IsJoin(player)){
-            ////				/玩家已经在游戏
+            ////				/Players already in the game
             //				player.LobbyError(Messages.MSG_PLAYER_INGAME);
             //				return;
             //			}
@@ -246,7 +246,7 @@ namespace YGOCore.Game
         }
         #endregion
 
-        #region 移除玩家
+        #region Remove player
         public void RemovePlayer(GameSession player)
         {
             if (player == null)
@@ -257,7 +257,7 @@ namespace YGOCore.Game
             if (player.Equals(HostPlayer) && State == GameState.Lobby)
             {
                 //Logger.WriteLine("HostPlayer is leave", false);
-                //主机玩家离开
+                //Host player leaves
                 if (player.Type != (int)PlayerType.Observer)
                 {
                     lock (AsyncRoot)
@@ -308,7 +308,7 @@ namespace YGOCore.Game
                 }
                 Surrender(player, 4, true);
             }
-            //所有玩家都离开
+            //All the players left
             foreach (GameSession p in Players)
             {
                 if (p != null)
@@ -322,7 +322,7 @@ namespace YGOCore.Game
         }
         #endregion
 
-        #region 消息发送
+        #region Send a message
         private void SendDuelingPlayers(GameSession player, bool isNow = true)
         {
             for (int i = 0; i < Players.Length; i++)
@@ -433,7 +433,7 @@ namespace YGOCore.Game
         }
         #endregion
 
-        #region 结果
+        #region Results
         public void Close(bool forceclose = false)
         {
             if (!IsOpen) return;
@@ -607,7 +607,7 @@ namespace YGOCore.Game
 
         #endregion
 
-        #region 比赛
+        #region Match
         public void MatchSaveResult(int player)
         {
             if (!IsMatch)
@@ -669,7 +669,7 @@ namespace YGOCore.Game
         }
         #endregion
 
-        #region 计时
+        #region Timing
         public void BonusTime(GameMessage message)
         {
             switch (message)
@@ -730,12 +730,12 @@ namespace YGOCore.Game
                             {
                                 if (Players[m_lastresponse].TurnSkip == 2)
                                 {
-                                    //跳过2回合，自动投降
+                                    //Skip 2 turns，Surrender
                                     Surrender(Players[m_lastresponse], 3);
                                 }
                                 else
                                 {
-                                    //跳过回合
+                                    //Skip turn
                                     Players[m_lastresponse].State = PlayerState.None;
                                     Players[m_lastresponse].TurnSkip++;
                                     SetResponse(m_analyser.LastMessage == GameMessage.SelectIdleCmd ? 7 : 3);
@@ -744,12 +744,12 @@ namespace YGOCore.Game
                             }
                             else {
                                 Surrender(Players[m_lastresponse], 3);
-                                //直接投降
+                                //Direct surrender
                             }
                         }
                         else if (elapsed.TotalSeconds > m_timelimit[m_lastresponse] + 30)
                         {
-                            //超时投降
+                            //Timeout to surrender
                             Surrender(Players[m_lastresponse], 3);
                         }
                     }
@@ -759,7 +759,7 @@ namespace YGOCore.Game
 
         #endregion
 
-        #region 刷新
+        #region Refresh
         public void RefreshAll()
         {
             RefreshMonsters(0);
@@ -1030,7 +1030,7 @@ namespace YGOCore.Game
 
         #endregion
 
-        #region 游戏准备
+        #region Game preparation
         public void SetReady(GameSession player, bool ready)
         {
             if (State != GameState.Lobby)
@@ -1222,7 +1222,7 @@ namespace YGOCore.Game
             EndDuel(reason == 4);
         }
         /// <summary>
-        /// 洗牌
+        /// Shuffle
         /// </summary>
         private static IList<int> ShuffleCards(Random rand, IEnumerable<int> cards)
         {
@@ -1254,7 +1254,7 @@ namespace YGOCore.Game
 
         #endregion
 
-        #region 游戏初始化
+        #region Game initialization
         public void TpResult(GameSession player, bool result)
         {
             if (State != GameState.Starting)
@@ -1420,7 +1420,7 @@ namespace YGOCore.Game
         }
         #endregion
 
-        #region 玩家移动
+        #region The player moves
         public void MoveToDuelist(GameSession player)
         {
             if (State != GameState.Lobby)
@@ -1495,7 +1495,7 @@ namespace YGOCore.Game
         }
         #endregion
 
-        #region 脚本错误
+        #region Script error
         private void HandleError(string error)
         {
             using (GameServerPacket packet = new GameServerPacket(StocMessage.Chat))
@@ -1508,7 +1508,7 @@ namespace YGOCore.Game
         }
         #endregion
 
-        #region 观战
+        #region Watch
         private void InitNewSpectator(GameSession player, int pos = -1)
         {
             if (m_duel == null)
@@ -1554,7 +1554,7 @@ namespace YGOCore.Game
                     draw.Write(0);
                 player.Send(draw);
             }
-            //回合数
+            //Number of turns
             using (GameServerPacket turn0 = new GameServerPacket(GameMessage.NewTurn))
             {
                 turn0.Write((byte)0);

@@ -49,7 +49,7 @@ namespace YGOCore
 		
 		#region ai
 		/// <summary>
-		/// 拥有一定数量
+		/// Have a certain amount
 		/// </summary>
 		/// <param name="name"></param>
 		/// <param name="room"></param>
@@ -63,7 +63,7 @@ namespace YGOCore
 			}
 			Process ai=new Process();
 			ai.StartInfo.FileName = "ai";
-			//设定程式执行参数
+			//Set the execution of the program parameters
 			ai.StartInfo.Arguments =
 				" "+Config.AIPass
 				+" 127.0.0.1 "
@@ -111,7 +111,7 @@ namespace YGOCore
 		/// </summary>
 		/// <param name="client"></param>
 		/// <param name="msg"></param>
-		/// <returns>处理返回true，未处理返回false</returns>
+		/// <returns>Returns true, unprocessed returnsfalse</returns>
 		public static bool OnChatCommand(this GameSession client, string msg){
 			if(msg == null){
 				return true;
@@ -148,16 +148,16 @@ namespace YGOCore
 			}
 			switch(cmd){
                 case "help":
-                    Console.WriteLine(">>sendall %1  发送消息给所有玩家");
-                    Console.WriteLine(">>room        显示房间数量");
-                    Console.WriteLine(">>cls         清空控制台内容");
-                    Console.WriteLine(">>close       关闭服务器");
-                    Console.WriteLine(">>ai count    AI的数量");
-                    Console.WriteLine(">>ai add      添加一个AI");
-                    Console.WriteLine(">>ai kill     关闭所有AI");
+                    Console.WriteLine(">>sendall %1  ");
+                    Console.WriteLine(">>room       ");
+                    Console.WriteLine(">>cls        ");
+                    Console.WriteLine(">>close     ");
+                    Console.WriteLine(">>ai count   ");
+                    Console.WriteLine(">>ai add    I");
+                    Console.WriteLine(">>ai kill     I");
                     break;
 				case "sendall":
-					//发送给所有玩家
+					//Sent to all players
 					int count = RoomManager.OnWorldMessage(args[1]);
 					Console.WriteLine(">>send="+count);
 					break;
