@@ -115,7 +115,7 @@ namespace GameClient
             this.groupBox1.Size = new System.Drawing.Size(319, 73);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Offline";
+            this.groupBox1.Text = $"Off";
             // 
             // btn_game
             // 
